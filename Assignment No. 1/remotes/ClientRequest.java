@@ -2,8 +2,6 @@ package client;
 
 import java.rmi.*;
 
-import remotes.Search;
-
 public class ClientRequest {
    public static void main(String[] args) {
        try {
@@ -17,3 +15,6 @@ public class ClientRequest {
        }
    }
 }
+// javac *.java
+// java server
+// java client

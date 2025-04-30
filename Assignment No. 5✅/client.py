@@ -1,5 +1,4 @@
 import socket
-import time
 
 ADDR = ("localhost", 8080)
 

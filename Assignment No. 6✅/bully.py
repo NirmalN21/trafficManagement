@@ -1,5 +1,3 @@
-import random
-
 num_processes = 5
 state = [True] * num_processes
 leader = num_processes

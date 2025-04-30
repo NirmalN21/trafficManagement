@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <omp.h>
-#include <unistd.h>
 
 #define N 100
 #define NUM_PROCESSORS 4
@@ -19,18 +18,13 @@ int main()
 
 #pragma omp parallel
     {
-        // int thread_id = omp_get_thread_num();
-        // int start = thread_id * (N / NUM_PROCESSORS);
-        // int end = (thread_id + 1) * (N / NUM_PROCESSORS);
+        int thread_id = omp_get_thread_num();
+        int start = thread_id * (N / NUM_PROCESSORS);
+        int end = (thread_id + 1) * (N / NUM_PROCESSORS);
 
-        // for (int i = start; i < end; i++)
-        // {
-        //     PARTIAL_SUM[thread_id] += arr[i];
-        // }
-        for (int i = 0; i < 5; i++)
+        for (int i = start; i < end; i++)
         {
-            sleep(omp_get_thread_num());
-            printf("Thread %d is sleeping for 3 seconds\n", omp_get_thread_num());
+            PARTIAL_SUM[thread_id] += arr[i];
         }
     }
 

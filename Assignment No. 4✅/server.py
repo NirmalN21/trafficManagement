@@ -26,6 +26,7 @@ def main():
     offsets = [client_time - server_time for client_time in client_times]
     avg_offset = sum(offsets) / (len(client_times) + 1)
 
+    print(client_times)
     for i, client in enumerate(clients):
         adj_time = json.dumps({
             "operation": "time_adj",

@@ -1,10 +1,7 @@
 package server;
 
-import java.rmi.*;
-import java.rmi.registry.*;
-
-import remotes.Search;
-import remotes.SearchQuery;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
 
 public class SearchServer {
    public static void main(String[] args) {
